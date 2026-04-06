@@ -1,0 +1,177 @@
+/* Экран «Альфа-Тишина» по макету */
+
+.page-hero {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    overflow-x: hidden;
+}
+
+.page-hero__img {
+    display: block;
+    width: 140%;
+    max-width: none;
+    height: auto;
+    margin-left: -20%;
+}
+
+.shell {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 22px 16px 0;
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+}
+
+.shell__main {
+    flex: 1 1 auto;
+}
+
+.page-title {
+    font-family: "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.35;
+    margin: 0 0 12px;
+    color: #000000;
+}
+
+.intro {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.55;
+    color: #000000;
+    margin: 0 0 12px;
+}
+
+.intro:last-of-type {
+    margin-bottom: 24px;
+}
+
+.section-title {
+    font-family: "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.45;
+    margin: 20px 0 8px;
+    color: #000000;
+}
+
+.section-title:first-of-type {
+    margin-top: 8px;
+}
+
+.settings-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.settings-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 0;
+    min-height: 31px;
+}
+
+.settings-row__label {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.52;
+    color: #000000;
+    flex: 1 1 auto;
+    padding-right: 8px;
+}
+
+/* Переключатель (iOS-подобный, в макете все в положении «выкл») */
+.toggle {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.toggle__input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+.toggle__track {
+    position: relative;
+    width: 51px;
+    height: 31px;
+    border-radius: 100px;
+    background-color: #e9e9ea;
+    transition: background-color 0.2s ease;
+}
+
+.toggle__thumb {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+    transition: transform 0.22s ease, box-shadow 0.2s ease;
+}
+
+.toggle__input:focus-visible + .toggle__track {
+    outline: 2px solid #000000;
+    outline-offset: 2px;
+}
+
+.toggle__input:checked + .toggle__track {
+    background-color: #34c759;
+}
+
+.toggle__input:checked + .toggle__track .toggle__thumb {
+    transform: translateX(20px);
+}
+
+.footer-cta {
+    flex-shrink: 0;
+    padding: 12px 0;
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
+}
+
+.btn-primary {
+    font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 12px;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.35;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #333333;
+}
+
+.btn-primary:active {
+    transform: scale(0.99);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+

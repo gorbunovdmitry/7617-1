@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <script>
+        (function () {
+            try {
+                var key = '7617_1';
+                var params = new URLSearchParams(location.search);
+                if (params.get('reset') === '1') {
+                    localStorage.removeItem(key);
+                    try {
+                        sessionStorage.removeItem('7617_payload_v' + key.split('_')[1]);
+                        sessionStorage.removeItem('7617_sent_v' + key.split('_')[1]);
+                    } catch (e2) {}
+                }
+                if (localStorage.getItem(key) === '1') {
+                    location.replace('stub.html');
+                }
+            } catch (e) { /* private mode и т.п. */ }
+        })();
+    </script>
+    <title>Альфа-Тишина</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/screen.css">
+</head>
+<body>
+    <div class="page-hero">
+        <img class="page-hero__img" src="images/Frame%2038.png" alt="" width="1048" height="388" decoding="async">
+    </div>
+    <div class="shell">
+        <main class="shell__main">
+            <h1 class="page-title">Альфа-Тишина</h1>
+            <p class="intro">Настройте, какие коммуникации хотите получать от банка</p>
+            <p class="intro">Обязательные уведомления останутся с вами для сохранения безопасности</p>
+
+            <h2 class="section-title">Каналы связи с вами</h2>
+            <ul class="settings-list">
+                <li class="settings-row">
+                    <span class="settings-row__label" id="label-ch-push">Пуш-уведомления</span>
+                    <label class="toggle">
+                        <input class="toggle__input" type="checkbox" id="channel-push" name="channel-push" aria-labelledby="label-ch-push">
+                        <span class="toggle__track" aria-hidden="true"><span class="toggle__thumb"></span></span>
+                    </label>
+                </li>
+                <li class="settings-row">
+                    <span class="settings-row__label" id="label-ch-sms">СМС</span>
+                    <label class="toggle">
+                        <input class="toggle__input" type="checkbox" id="channel-sms" name="channel-sms" aria-labelledby="label-ch-sms">
+                        <span class="toggle__track" aria-hidden="true"><span class="toggle__thumb"></span></span>
+                    </label>
+                </li>
+                <li class="settings-row">
+                    <span class="settings-row__label" id="label-ch-mail">Электронная почта</span>
+                    <label class="toggle">
+                        <input class="toggle__input" type="checkbox" id="channel-mail" name="channel-mail" aria-labelledby="label-ch-mail">
+                        <span class="toggle__track" aria-hidden="true"><span class="toggle__thumb"></span></span>
+                    </label>
+                </li>
+                <li class="settings-row">
+                    <span class="settings-row__label" id="label-ch-calls">Звонки</span>
+                    <label class="toggle">
+                        <input class="toggle__input" type="checkbox" id="channel-calls" name="channel-calls" aria-labelledby="label-ch-calls">
+                        <span class="toggle__track" aria-hidden="true"><span class="toggle__thumb"></span></span>
+                    </label>
+                </li>
+                <li class="settings-row">
+                    <span class="settings-row__label" id="label-ch-offers">Предложения на экранах мобильного приложения</span>
+                    <label class="toggle">
+                        <input class="toggle__input" type="checkbox" id="channel-offers" name="channel-offers" aria-labelledby="label-ch-offers">
+                        <span class="toggle__track" aria-hidden="true"><span class="toggle__thumb"></span></span>
+                    </label>
+                </li>
+            </ul>
+
+            <h2 class="section-title">Продукты</h2>
+            <ul class="settings-list">
+                <li class="settings-row">
+                    <span class="settings-row__label" id="label-pr-cards">Банковские карты</span>
+                    <label class="toggle">
+                        <input class="toggle__input" type="checkbox" id="product-cards" name="product-cards" aria-labelledby="label-pr-cards">
+                        <span class="toggle__track" aria-hidden="true"><span class="toggle__thumb"></span></span>
+                    </label>
+                </li>
+                <li class="settings-row">
+                    <span class="settings-row__label" id="label-pr-credit">Кредитные продукты</span>
+                    <label class="toggle">
+                        <input class="toggle__input" type="checkbox" id="product-credit" name="product-credit" aria-labelledby="label-pr-credit">
+                        <span class="toggle__track" aria-hidden="true"><span class="toggle__thumb"></span></span>
+                    </label>
+                </li>
+                <li class="settings-row">
+                    <span class="settings-row__label" id="label-pr-invest">Инвестиционные продукты</span>
+                    <label class="toggle">
+                        <input class="toggle__input" type="checkbox" id="product-invest" name="product-invest" aria-labelledby="label-pr-invest">
+                        <span class="toggle__track" aria-hidden="true"><span class="toggle__thumb"></span></span>
+                    </label>
+                </li>
+                <li class="settings-row">
+                    <span class="settings-row__label" id="label-pr-fin">Финансовые сервисы и услуги</span>
+                    <label class="toggle">
+                        <input class="toggle__input" type="checkbox" id="product-fin" name="product-fin" aria-labelledby="label-pr-fin">
+                        <span class="toggle__track" aria-hidden="true"><span class="toggle__thumb"></span></span>
+                    </label>
+                </li>
+                <li class="settings-row">
+                    <span class="settings-row__label" id="label-pr-life">Сервисы и услуги для жизни</span>
+                    <label class="toggle">
+                        <input class="toggle__input" type="checkbox" id="product-life" name="product-life" aria-labelledby="label-pr-life">
+                        <span class="toggle__track" aria-hidden="true"><span class="toggle__thumb"></span></span>
+                    </label>
+                </li>
+                <li class="settings-row">
+                    <span class="settings-row__label" id="label-pr-new">Новые функции и продукты</span>
+                    <label class="toggle">
+                        <input class="toggle__input" type="checkbox" id="product-new" name="product-new" aria-labelledby="label-pr-new">
+                        <span class="toggle__track" aria-hidden="true"><span class="toggle__thumb"></span></span>
+                    </label>
+                </li>
+            </ul>
+        </main>
+
+        <footer class="footer-cta">
+            <button type="button" class="btn-primary" id="activate">Активировать</button>
+        </footer>
+    </div>
+    <script>window.__7617_VARIANT__ = 1;</script>
+    <script src="js/analytics.js"></script>
+    <script src="js/sheet.js"></script>
+    <script>
+        document.getElementById('activate').addEventListener('click', function () {
+            if (typeof window.track7617ContinueClick === 'function') {
+                window.track7617ContinueClick();
+            }
+            try {
+                const payload = {
+                    variant: 1,
+                    push: (document.getElementById('channel-push') && document.getElementById('channel-push').checked) ? 1 : 0,
+                    sms: (document.getElementById('channel-sms') && document.getElementById('channel-sms').checked) ? 1 : 0,
+                    email: (document.getElementById('channel-mail') && document.getElementById('channel-mail').checked) ? 1 : 0,
+                    calls: (document.getElementById('channel-calls') && document.getElementById('channel-calls').checked) ? 1 : 0,
+                    inAppOffers: (document.getElementById('channel-offers') && document.getElementById('channel-offers').checked) ? 1 : 0,
+                    cards: (document.getElementById('product-cards') && document.getElementById('product-cards').checked) ? 1 : 0,
+                    credit: (document.getElementById('product-credit') && document.getElementById('product-credit').checked) ? 1 : 0,
+                    invest: (document.getElementById('product-invest') && document.getElementById('product-invest').checked) ? 1 : 0,
+                    finServices: (document.getElementById('product-fin') && document.getElementById('product-fin').checked) ? 1 : 0,
+                    lifeServices: (document.getElementById('product-life') && document.getElementById('product-life').checked) ? 1 : 0,
+                    newFeatures: (document.getElementById('product-new') && document.getElementById('product-new').checked) ? 1 : 0,
+                    smartSilence: 0,
+                    mySilence: 0,
+                    fullSilence: 0,
+                    upTo20: 0,
+                    upTo10: 0,
+                    upTo5: 0
+                };
+                sessionStorage.setItem('7617_payload_v1', JSON.stringify(payload));
+                sessionStorage.removeItem('7617_sent_v1');
+            } catch (e) {}
+            try {
+                localStorage.setItem('7617_1', '1');
+            } catch (e) { /* нет persist — переход всё равно */ }
+            location.replace('stub.html');
+        });
+    </script>
+</body>
+</html>
